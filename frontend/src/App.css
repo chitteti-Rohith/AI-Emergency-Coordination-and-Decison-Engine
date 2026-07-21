@@ -1,0 +1,486 @@
+/* ==========================================================================
+   Design tokens
+   ========================================================================== */
+
+:root {
+  /* Surface */
+  --bg: #f2f3f6;
+  --panel: #ffffff;
+  --panel-raised: #ffffff;
+  --hairline: #dde1e7;
+
+  /* Ink */
+  --ink: #14181f;
+  --ink-muted: #5b6673;
+  --ink-faint: #8892a0;
+
+  /* Brand */
+  --brand: #2a4d8f;
+  --brand-ink: #ffffff;
+  --brand-dark: #1e3a6f;
+
+  /* Severity ramp — Low to Critical, four distinguishable hues */
+  --sev-low: #1e9e85;
+  --sev-low-bg: #e4f6f2;
+  --sev-medium: #6a5fc4;
+  --sev-medium-bg: #edeafb;
+  --sev-high: #d9820f;
+  --sev-high-bg: #fdf0dd;
+  --sev-critical: #cc3f3f;
+  --sev-critical-bg: #fbe6e6;
+
+  /* Type */
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --radius: 10px;
+  --shadow-card: 0 1px 2px rgba(20, 24, 31, 0.04), 0 4px 12px rgba(20, 24, 31, 0.04);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Page shell
+   ========================================================================== */
+
+.page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem 4rem;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--bg);
+}
+
+body {
+  background: var(--bg);
+}
+
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand);
+  background: #e8edf7;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: 0.9rem;
+}
+
+.page-header h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.page-header p {
+  color: var(--ink-muted);
+  max-width: 70ch;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Incident form
+   ========================================================================== */
+
+.incident-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow-card);
+}
+
+.incident-form label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.incident-form textarea {
+  padding: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  resize: vertical;
+  color: var(--ink);
+  background: #fbfbfc;
+}
+
+.incident-form textarea::placeholder {
+  color: var(--ink-faint);
+}
+
+.incident-form textarea:focus-visible,
+.incident-form button:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+.incident-form button {
+  align-self: flex-start;
+  padding: 16px 40px;
+  cursor: pointer;
+  background: var(--brand);
+  color: var(--brand-ink);
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.15s ease;
+}
+
+.incident-form button:hover:not(:disabled) {
+  background: var(--brand-dark);
+}
+
+.incident-form button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+/* ==========================================================================
+   Error banner
+   ========================================================================== */
+
+.error-banner {
+  background: var(--sev-critical-bg);
+  color: #6e2323;
+  border: 1px solid #f0bcbc;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1.25rem;
+  font-size: 0.92rem;
+}
+
+/* ==========================================================================
+   Pipeline strip (loading + completed states)
+   ========================================================================== */
+
+.pipeline {
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  gap: 0.25rem;
+}
+
+.pipeline-stage {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.pipeline-stage:last-child {
+  flex: 0 0 auto;
+}
+
+.pipeline-dot {
+  width: 10px;
+  height: 10px;
+  min-width: 10px;
+  border-radius: 50%;
+  background: var(--brand);
+  display: block;
+}
+
+.pipeline-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-muted);
+  margin-left: 0.4rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pipeline-connector {
+  flex: 1;
+  height: 1.5px;
+  background: var(--brand);
+  opacity: 0.35;
+  margin: 0 0.5rem;
+  min-width: 0.75rem;
+}
+
+.pipeline--active .pipeline-dot {
+  animation: pulse 1.1s ease-in-out infinite;
+}
+
+.pipeline--active .pipeline-stage:nth-child(2) .pipeline-dot { animation-delay: 0.15s; }
+.pipeline--active .pipeline-stage:nth-child(3) .pipeline-dot { animation-delay: 0.3s; }
+.pipeline--active .pipeline-stage:nth-child(4) .pipeline-dot { animation-delay: 0.45s; }
+.pipeline--active .pipeline-stage:nth-child(5) .pipeline-dot { animation-delay: 0.6s; }
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.35; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+.loading {
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.25rem 0.75rem;
+  margin-bottom: 1.25rem;
+  box-shadow: var(--shadow-card);
+}
+
+.loading-text {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  margin: 0.25rem 0 0.5rem;
+}
+
+/* ==========================================================================
+   Results / ticket header
+   ========================================================================== */
+
+.results {
+  animation: fade-in 0.35s ease both;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.ticket-header {
+  margin-bottom: 1.25rem;
+}
+
+.ticket-row {
+  display: flex;
+  gap: 1.5rem;
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-bottom: none;
+  border-radius: var(--radius) var(--radius) 0 0;
+  padding: 0.85rem 1.25rem;
+}
+
+.ticket-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.ticket-field-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.ticket-field-value {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.ticket-perforation {
+  height: 1px;
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--hairline) 0,
+    var(--hairline) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  border-left: 1px solid var(--hairline);
+  border-right: 1px solid var(--hairline);
+}
+
+/* ==========================================================================
+   Cards
+   ========================================================================== */
+
+.section-heading {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 1.75rem 0 0.9rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.card {
+  border: 1px solid var(--hairline);
+  border-left: 5px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  background: var(--panel);
+  box-shadow: var(--shadow-card);
+}
+
+.card h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.card-text {
+  white-space: pre-wrap;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--ink);
+  margin: 0;
+}
+
+.severity-badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.card--low { border-left-color: var(--sev-low); }
+.card--medium { border-left-color: var(--sev-medium); }
+.card--high { border-left-color: var(--sev-high); }
+.card--critical { border-left-color: var(--sev-critical); }
+
+.severity-badge--low { color: var(--sev-low); background: var(--sev-low-bg); }
+.severity-badge--medium { color: var(--sev-medium); background: var(--sev-medium-bg); }
+.severity-badge--high { color: var(--sev-high); background: var(--sev-high-bg); }
+.severity-badge--critical { color: var(--sev-critical); background: var(--sev-critical-bg); }
+
+.card--tool {
+  border-left-color: var(--brand);
+}
+
+.card--tool h3 {
+  margin-bottom: 0.6rem;
+}
+
+.tool-list {
+  margin: 0;
+}
+
+.tool-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px dashed var(--hairline);
+  font-size: 0.85rem;
+}
+
+.tool-row:last-child {
+  border-bottom: none;
+}
+
+.tool-row dt {
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+
+.tool-row dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  color: var(--ink);
+  text-align: right;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.footer {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--hairline);
+  color: var(--ink-faint);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 640px) {
+  .page {
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  .pipeline-label {
+    display: none;
+  }
+
+  .pipeline-connector {
+    margin: 0 0.25rem;
+  }
+
+  .ticket-row {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Reduced motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .pipeline--active .pipeline-dot {
+    animation: none;
+    opacity: 0.9;
+  }
+
+  .results {
+    animation: none;
+  }
+
+  .incident-form button{
+    padding:18px 48px;
+    font-size:1.1rem;
+}
+}
