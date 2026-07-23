@@ -29,6 +29,12 @@ AI Emergency Coordination & Decision Engine is a multi-agent AI system that anal
 - LangChain
 - Groq LLM
 
+### APIs
+- Browser Geolocation API
+- OpenStreetMap Nominatim API
+- OpenStreetMap Overpass API
+- Open-Meteo API
+
 ## Project Structure
 
 ```
