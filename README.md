@@ -1,86 +1,261 @@
-# AI Emergency Coordination & Decision Engine
+# 🤖 AI Emergency Coordination & Decision Engine
 
-## Overview
-AI Emergency Coordination & Decision Engine is a multi-agent AI system that analyzes emergency incidents, assesses risk, provides decision support, and retrieves enterprise resources such as emergency contacts, nearby hospitals, weather, and location information.
+A **Multi-Agent AI Emergency Response Platform** that analyzes emergency incidents, assesses risk, coordinates specialized AI agents, retrieves emergency resources, maintains memory, and generates intelligent decision support with emergency email alerts.
 
-## Features
-- Multi-Agent AI Architecture
+---
+
+# 📌 Overview
+
+The AI Emergency Coordination & Decision Engine is an intelligent emergency response platform built using a **Multi-Agent AI Architecture**.
+
+The system coordinates multiple AI agents to:
+
+- Classify emergency incidents
+- Assess risk severity
+- Recommend emergency actions
+- Retrieve nearby hospitals
+- Fetch emergency contacts
+- Get weather and location information
+- Maintain short-term and long-term memory
+- Send emergency email alerts
+
+---
+
+# 🚀 Features
+
+## 🤖 Multi-Agent AI System
+
+- Coordinator Agent
+- Classification Agent
+- Risk Assessment Agent
+- Decision Agent
+- Retrieval Agent
+
+## 🚨 Emergency Intelligence
+
 - Incident Classification
 - Risk Assessment
-- Decision Support
+- AI Decision Support
 - Emergency Contacts
 - Nearby Hospital Finder
 - Weather Information
 - Location Details
-- React Dashboard
-- Flask Backend
 
-## Tech Stack
+## 🧠 Memory System
 
-### Frontend
+### Short-Term Memory
+
+- Session-based incident memory
+- Context-aware decision making
+
+### Long-Term Memory
+
+- Persistent incident storage using JSON
+- Retrieval of similar previous incidents
+- Historical knowledge for AI decision support
+
+## 📧 Emergency Alert System
+
+- EmailJS Integration
+- AI-generated emergency report
+- Incident summary
+- Risk level
+- Nearby hospital
+- Emergency contacts
+- AI recommended actions
+
+## 📊 Dashboard
+
+- Modern React Dashboard
+- Incident Analysis
+- Resources
+- Emergency Alerts
+- Incident History
+- About Project
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
 - React.js
 - Vite
-- CSS
+- CSS3
 - Axios
+- EmailJS
 
-### Backend
+## Backend
+
 - Python
 - Flask
 - LangChain
 - Groq LLM
 
-### APIs
+## AI Architecture
+
+- Multi-Agent System
+- Prompt Engineering
+- Short-Term Memory
+- Long-Term Memory
+
+## APIs
+
 - Browser Geolocation API
 - OpenStreetMap Nominatim API
 - OpenStreetMap Overpass API
 - Open-Meteo API
 
-## Project Structure
+---
 
+# 📂 Project Structure
+
+```text
+AI_Emergency_Coordination_System/
+
+├── backend/
+│   ├── agents/
+│   ├── memory/
+│   ├── prompts/
+│   ├── tools/
+│   ├── app.py
+│   └── config.py
+│
+├── frontend/
+│   ├── src/
+│   │   ├── pages/
+│   │   ├── components/
+│   │   ├── layout/
+│   │   ├── styles/
+│   │   └── api/
+│   └── package.json
+│
+└── README.md
 ```
-backend/
-├── agents/
-├── prompts/
-├── memory/
-├── tools/
-├── app.py
-├── config.py
 
-frontend/
-├── src/
-├── public/
-├── package.json
-```
+---
 
-## Installation
+# ⚙ Installation
 
-### Backend
+## Backend
+
+```bash
+cd backend
+
 pip install -r requirements.txt
+
 python app.py
+```
 
-### Frontend
+## Frontend
+
+```bash
 cd frontend
+
 npm install
+
 npm run dev
+```
 
-## Project Workflow
+---
 
-User Input
-↓
+# 🔄 Project Workflow
+
+```text
+User Incident
+      │
+      ▼
 Coordinator Agent
-↓
-Classifier Agent
-↓
+      │
+      ▼
+Classification Agent
+      │
+      ▼
 Risk Assessment Agent
-↓
-Decision Support Agent
-↓
-Enterprise Tools
-↓
+      │
+      ▼
+Retrieval Agent
+      │
+      ▼
+Decision Agent
+      │
+      ▼
+Emergency Resources
+      │
+      ▼
+Memory System
+      │
+      ▼
+Email Alert
+      │
+      ▼
 React Dashboard
+```
 
-## Status
+---
 
-✅ Milestone 1 Completed
+# 🧠 Memory Architecture
 
-✅ Milestone 2 Completed
+```text
+                  User Incident
+                         │
+                         ▼
+                Coordinator Agent
+                         │
+        ┌────────────────┴────────────────┐
+        ▼                                 ▼
+Short-Term Memory                Long-Term Memory
+(Session Memory)               (Persistent JSON Store)
+        │                                 │
+        └────────────────┬────────────────┘
+                         ▼
+                  Decision Agent
+                         │
+                         ▼
+                 AI Recommended Action
+```
+
+---
+
+# 📸 Application Modules
+
+- 🏠 Dashboard
+- 🔍 Analysis
+- 🏥 Resources
+- 📧 Emergency Alerts
+- 📜 Incident History
+- ℹ About
+
+---
+
+# ✅ Milestone Progress
+
+- ✅ Milestone 1 – Foundation & AI Agent Setup
+- ✅ Milestone 2 – Enterprise Tools Integration
+- ✅ Milestone 3 – Agent Coordination & Memory Systems
+
+---
+
+# 🔮 Future Enhancements
+
+- SMS Notifications
+- Voice-Based Emergency Reporting
+- Image-Based Incident Detection
+- Mobile Application
+- Real-Time Emergency Service Integration
+
+---
+
+# 👨‍💻 Developer
+
+**Rohith Ch**
+
+B.Tech – Computer Science & Engineering
+
+NBKR Institute of Science & Technology
+
+---
+
+# 📜 License
+
+This project was developed for educational and research purposes.
