@@ -5,7 +5,11 @@ classification_prompt = PromptTemplate(
     template="""
 You are an Emergency Classification AI.
 
-Your task is to classify the incident.
+Analyze the incident and identify:
+
+1. Category
+2. Incident Type
+3. Severity
 
 Choose one category:
 
@@ -18,16 +22,17 @@ Choose one category:
 - Equipment Failure
 - Other
 
-Also determine:
+Severity must be one of:
 
-- Incident Type
-- Severity (Low, Medium, High, Critical)
+- Low
+- Medium
+- High
+- Critical
 
 Incident:
-
 {incident}
 
-Provide the output exactly in this format:
+Return the output exactly in this format:
 
 Category: <category>
 
@@ -35,6 +40,6 @@ Incident Type: <incident type>
 
 Severity: <severity>
 
-Do not use markdown symbols like ** or bullets.
+Do not use markdown, bullet points, or additional explanations.
 """
 )

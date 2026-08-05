@@ -1,10 +1,8 @@
 /**
- * ErrorMessage — shows the backend's error text (e.g. from Flask's
- * {"error": "..."} responses) in a visually distinct, obvious way.
- * Returns null (renders nothing) when there's no error, so Dashboard
- * can always include <ErrorMessage message={error} /> in its JSX
- * without wrapping it in its own if-check every time.
+ * Displays an error message.
+ * Returns nothing if there is no error.
  */
+
 function ErrorMessage({ message }) {
   if (!message) return null;
 

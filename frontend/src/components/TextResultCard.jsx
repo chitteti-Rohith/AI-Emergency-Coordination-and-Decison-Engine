@@ -1,28 +1,101 @@
-import { SEVERITY_LABEL } from "../utils/severity";
-
 /**
- * TextResultCard — reusable card for agent outputs that come back as plain
- * multi-line text (classification, risk, decision — see coordinator.py,
- * these are response.content strings straight from the LLM, not JSON).
- *
- * We deliberately do NOT try to parse/reformat this text into fields —
- * reformatting risks silently breaking if the LLM's wording varies. The
- * `tone` prop (computed in Dashboard.jsx via getSeverityTone) only adds a
- * color accent and badge; the text itself is shown exactly as the backend
- * sent it, with line breaks preserved.
+ * TextResultCard
+ * Displays AI Agent outputs in a clean report format.
  */
+
 function TextResultCard({ title, icon, content, tone }) {
+
+  const lines = content
+    ? content.split("\n").filter(line => line.trim() !== "")
+    : [];
+
   return (
-    <div className={`card ${tone ? `card--${tone}` : ""}`}>
-      <div className="card-heading">
-        <h3>
-          <span aria-hidden="true">{icon}</span> {title}
-        </h3>
-        {tone && <span className={`severity-badge severity-badge--${tone}`}>{SEVERITY_LABEL[tone]}</span>}
+
+    <div className={`card result-card ${tone ? `card--${tone}` : ""}`}>
+
+      <div className="result-header">
+
+        <div className="result-title">
+
+          <span className="result-icon">
+            {icon}
+          </span>
+
+          <h3>{title}</h3>
+
+        </div>
+
+        {tone && (
+          <span className={`severity severity-${tone}`}>
+            {tone.toUpperCase()}
+          </span>
+        )}
+
       </div>
-      <pre className="card-text">{content}</pre>
+
+      <div className="result-body">
+
+        {lines.map((line, index) => {
+
+          // Section Heading
+          if (
+            line.endsWith(":") &&
+            !line.startsWith("-")
+          ) {
+            return (
+              <h4
+                key={index}
+                className="result-section"
+              >
+                {line.replace(":", "")}
+              </h4>
+            );
+          }
+
+          // Bullet
+          if (line.startsWith("-")) {
+
+            return (
+
+              <div
+                key={index}
+                className="result-item"
+              >
+
+                <span className="bullet">
+                  •
+                </span>
+
+                <span>
+                  {line.substring(1).trim()}
+                </span>
+
+              </div>
+
+            );
+
+          }
+
+          // Normal line
+          return (
+
+            <p
+              key={index}
+              className="result-text"
+            >
+              {line}
+            </p>
+
+          );
+
+        })}
+
+      </div>
+
     </div>
+
   );
+
 }
 
 export default TextResultCard;

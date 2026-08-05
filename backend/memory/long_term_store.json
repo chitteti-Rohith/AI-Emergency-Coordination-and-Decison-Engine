@@ -1,0 +1,99 @@
+[
+  {
+    "incident": "Smoke is coming from the electrical room",
+    "category": "Fire",
+    "result": {
+      "classification": "Category: Fire\nIncident Type: Electrical Fire\nSeverity: High",
+      "risk": "Risk Level:\nCritical\n\nPossible Impact:\n- Fire may spread rapidly\n- Smoke inhalation risk\n- Electrical damage\n- Building power failure\n- Potential for explosion\n\nReason:\n- Electrical room contains high-voltage equipment.\n- Smoke indicates a possible short circuit.\n- The Classification Agent has categorized the incident as a high-severity electrical fire, indicating a significant and immediate threat.",
+      "decision": "Immediate Actions:\nEvacuate the building immediately, shut off the main power supply if possible, and activate the fire alarm system.\n\nSafety Measures:\nUse fire-resistant materials to contain the fire, wear self-contained breathing apparatus to avoid smoke inhalation, and maintain a safe distance from the electrical room.\n\nWho Should Respond:\nFire Department \n\nEmergency Contacts (India):\nFire Department: 101\nNational Emergency: 112\n\nPriority:\nCritical\n\nIncident:\nSmoke is coming from the electrical room",
+      "contacts": {
+        "Fire Department": "101",
+        "National Emergency": "112"
+      },
+      "hospital": {
+        "Hospital": "Government General Hospital",
+        "Latitude": 13.704287009161382,
+        "Longitude": 80.01230276867511,
+        "Ambulance": "108"
+      },
+      "weather": {
+        "Temperature": "29.1\u00b0C",
+        "Condition": "Overcast",
+        "Wind Speed": "7.6 km/h"
+      },
+      "location": {
+        "Location": "MDR072, Pahaddlagunta, Sullurpeta, Tirupati, Andhra Pradesh, 524121, India",
+        "Latitude": "13.704287009161382",
+        "Longitude": "80.01230276867511",
+        "Nearest Landmark": "MDR072"
+      },
+      "session_memory": "No previous incidents in this session.",
+      "related_incidents": []
+    }
+  },
+  {
+    "incident": "Smoke is coming from electrical room",
+    "category": "Fire",
+    "result": {
+      "classification": "Category: Fire\nIncident Type: Electrical Fire\nSeverity: High",
+      "risk": "Risk Level:\nCritical\n\nPossible Impact:\n- Fire may spread rapidly\n- Smoke inhalation risk\n- Electrical damage\n- Building power failure\n- Potential for explosion\n\nReason:\nThe Classification Agent has categorized the incident as a high-severity electrical fire, indicating a significant and immediate threat. Electrical rooms contain high-voltage equipment that can ignite and spread fire quickly, and the presence of smoke suggests a possible short circuit or other hazardous condition that requires immediate attention to prevent further damage or loss.",
+      "decision": "Immediate Actions:\n- Evacuate the building immediately\n- Shut off the main power supply to the electrical room\n- Activate the fire alarm and suppression system\n\nSafety Measures:\n- Wear protective gear including masks and gloves\n- Avoid inhaling smoke\n- Keep a safe distance from the electrical room\n\nWho Should Respond:\n- Fire Department\n- Police\n- Security Team\n\nEmergency Contacts (India):\n- 101 (Fire Department)\n- 100 (Police)\n\nPriority:\n- Critical",
+      "contacts": {
+        "Fire Department": "101",
+        "National Emergency": "112"
+      },
+      "hospital": {
+        "Hospital": "Government General Hospital",
+        "Latitude": 13.704864,
+        "Longitude": 80.01210875,
+        "Ambulance": "108"
+      },
+      "weather": {
+        "Temperature": "29.1\u00b0C",
+        "Condition": "Overcast",
+        "Wind Speed": "7.6 km/h"
+      },
+      "location": {
+        "Location": "MDR072, Pahaddlagunta, Sullurpeta, Tirupati, Andhra Pradesh, 524121, India",
+        "Latitude": "13.704864",
+        "Longitude": "80.01210875",
+        "Nearest Landmark": "MDR072"
+      },
+      "session_memory": "No previous incidents in this session.",
+      "related_incidents": [
+        {
+          "incident": "Smoke is coming from the electrical room",
+          "category": "Fire",
+          "result": {
+            "classification": "Category: Fire\nIncident Type: Electrical Fire\nSeverity: High",
+            "risk": "Risk Level:\nCritical\n\nPossible Impact:\n- Fire may spread rapidly\n- Smoke inhalation risk\n- Electrical damage\n- Building power failure\n- Potential for explosion\n\nReason:\n- Electrical room contains high-voltage equipment.\n- Smoke indicates a possible short circuit.\n- The Classification Agent has categorized the incident as a high-severity electrical fire, indicating a significant and immediate threat.",
+            "decision": "Immediate Actions:\nEvacuate the building immediately, shut off the main power supply if possible, and activate the fire alarm system.\n\nSafety Measures:\nUse fire-resistant materials to contain the fire, wear self-contained breathing apparatus to avoid smoke inhalation, and maintain a safe distance from the electrical room.\n\nWho Should Respond:\nFire Department \n\nEmergency Contacts (India):\nFire Department: 101\nNational Emergency: 112\n\nPriority:\nCritical\n\nIncident:\nSmoke is coming from the electrical room",
+            "contacts": {
+              "Fire Department": "101",
+              "National Emergency": "112"
+            },
+            "hospital": {
+              "Hospital": "Government General Hospital",
+              "Latitude": 13.704287009161382,
+              "Longitude": 80.01230276867511,
+              "Ambulance": "108"
+            },
+            "weather": {
+              "Temperature": "29.1\u00b0C",
+              "Condition": "Overcast",
+              "Wind Speed": "7.6 km/h"
+            },
+            "location": {
+              "Location": "MDR072, Pahaddlagunta, Sullurpeta, Tirupati, Andhra Pradesh, 524121, India",
+              "Latitude": "13.704287009161382",
+              "Longitude": "80.01230276867511",
+              "Nearest Landmark": "MDR072"
+            },
+            "session_memory": "No previous incidents in this session.",
+            "related_incidents": []
+          }
+        }
+      ]
+    }
+  }
+]

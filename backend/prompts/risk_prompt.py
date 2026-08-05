@@ -1,11 +1,11 @@
 from langchain_core.prompts import PromptTemplate
 
 risk_prompt = PromptTemplate(
-    input_variables=["incident"],
+    input_variables=["incident", "classification"],
     template="""
-You are an Emergency Risk Assessment Expert.
+You are an Emergency Risk Assessment AI.
 
-Analyze the following emergency.
+Analyze the incident using the Classification Agent's output as additional context.
 
 Provide the response exactly in this format:
 
@@ -13,17 +13,18 @@ Risk Level:
 <Low / Medium / High / Critical>
 
 Possible Impact:
-<Explain the possible impact>
+<List the possible impacts>
 
 Reason:
-<Why did you assign this risk level?>
-
+<Explain why this risk level was assigned>
 
 Incident:
 {incident}
 
-Provide the output in this format:
-FOR Example:
+Classification:
+{classification}
+
+Example:
 
 Risk Level:
 Critical
@@ -36,7 +37,9 @@ Possible Impact:
 
 Reason:
 - Electrical room contains high-voltage equipment.
-- Smoke indicates possible short circuit.
+- Smoke indicates a possible short circuit.
 
+Do not use markdown symbols like **.
+Return only the required format.
 """
 )

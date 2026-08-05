@@ -1,14 +1,52 @@
-def get_location_details(location=None):
+import requests
+
+
+def get_location_details(latitude=None, longitude=None):
     """
-    Returns location details.
-    (Currently uses sample data. Can be connected to Google Maps/OpenStreetMap later.)
+    Reverse geocoding using OpenStreetMap Nominatim API.
     """
 
-    details = {
-        "Location": location if location else "Unknown",
-        "Latitude": "13.6288",
-        "Longitude": "79.4192",
-        "Nearest Landmark": "City Center"
+    if latitude is None or longitude is None:
+        latitude = 13.6288
+        longitude = 80.0280
+
+    url = (
+        f"https://nominatim.openstreetmap.org/reverse"
+        f"?lat={latitude}&lon={longitude}&format=json"
+    )
+
+    headers = {
+        "User-Agent": "AI-Emergency-Coordination-System"
     }
 
-    return details
+    try:
+        response = requests.get(url, headers=headers, timeout=10)
+        data = response.json()
+
+        address = data.get("address", {})
+
+        landmark = (
+            address.get("road")
+            or address.get("suburb")
+            or address.get("village")
+            or address.get("town")
+            or address.get("city")
+            or address.get("county")
+            or "Unknown"
+        )
+
+        return {
+            "Location": data.get("display_name", "Unknown"),
+            "Latitude": str(latitude),
+            "Longitude": str(longitude),
+            "Nearest Landmark": landmark
+        }
+
+    except Exception:
+
+        return {
+            "Location": "Unknown",
+            "Latitude": str(latitude),
+            "Longitude": str(longitude),
+            "Nearest Landmark": "Unknown"
+        }

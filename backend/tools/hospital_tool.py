@@ -1,13 +1,67 @@
-def get_nearest_hospital(location=None):
+import requests
+
+
+def get_nearest_hospital(latitude=None, longitude=None):
     """
-    Returns nearby hospital details.
-    (Currently using sample data. Later we can connect a real API.)
+    Finds the nearest hospital using the OpenStreetMap Overpass API.
     """
 
-    hospital = {
+    if latitude is None or longitude is None:
+        latitude = 13.6288
+        longitude = 80.0280
+
+    query = f"""
+    [out:json];
+
+    (
+      node["amenity"="hospital"](around:10000,{latitude},{longitude});
+      way["amenity"="hospital"](around:10000,{latitude},{longitude});
+      relation["amenity"="hospital"](around:10000,{latitude},{longitude});
+    );
+
+    out center;
+    """
+
+    try:
+
+        response = requests.post(
+            "https://overpass-api.de/api/interpreter",
+            data=query,
+            timeout=20
+        )
+
+        data = response.json()
+
+        if data.get("elements"):
+
+            hospital = data["elements"][0]
+
+            if "lat" in hospital:
+                lat = hospital["lat"]
+                lon = hospital["lon"]
+            else:
+                lat = hospital["center"]["lat"]
+                lon = hospital["center"]["lon"]
+
+            return {
+                "Hospital": hospital.get(
+                    "tags",
+                    {}
+                ).get(
+                    "name",
+                    "Unknown Hospital"
+                ),
+                "Latitude": lat,
+                "Longitude": lon,
+                "Ambulance": "108"
+            }
+
+    except Exception:
+        pass
+
+    return {
         "Hospital": "Government General Hospital",
-        "Address": "Nearby City Center",
+        "Latitude": latitude,
+        "Longitude": longitude,
         "Ambulance": "108"
     }
-
-    return hospital
