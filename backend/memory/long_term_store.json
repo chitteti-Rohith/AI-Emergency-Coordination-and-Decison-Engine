@@ -95,5 +95,124 @@
         }
       ]
     }
+  },
+  {
+    "incident": "Accident happened in the road",
+    "category": "Road Accident",
+    "result": {
+      "classification": "Category: Road Accident\nIncident Type: Vehicle Collision\nSeverity: Medium",
+      "risk": "Risk Level:\nMedium\n\nPossible Impact:\n- Injury to occupants of the vehicles\n- Damage to vehicles\n- Traffic congestion\n- Potential for secondary accidents\n\nReason:\n- The incident is classified as a vehicle collision with medium severity, indicating a significant impact but not catastrophic.\n- The road accident may cause injuries and damage to the vehicles involved, and potentially disrupt traffic flow.",
+      "decision": "Immediate Actions:\n- Clear the area to prevent further accidents\n- Provide first aid to injured individuals\n- Call emergency services\n\nSafety Measures:\n- Wear protective gear when approaching the scene\n- Be cautious of potential fire hazards from damaged vehicles\n- Redirect traffic to prevent congestion\n\nWho Should Respond:\n- Fire Department\n- Police\n- Ambulance\n\nEmergency Contacts (India):\n- 101 for fire services\n- 100 for police\n- 102 for ambulance\n\nPriority:\n- Medium",
+      "contacts": {
+        "Police": "100",
+        "Ambulance": "108",
+        "National Emergency": "112"
+      },
+      "hospital": {
+        "Hospital": "Government General Hospital",
+        "Latitude": 13.70414453846154,
+        "Longitude": 80.01201101923078,
+        "Ambulance": "108"
+      },
+      "weather": null,
+      "location": {
+        "Location": "MDR072, Sullurupeta Urban, Pahaddlagunta, Sullurpeta, Tirupati, Andhra Pradesh, 524121, India",
+        "Latitude": "13.70414453846154",
+        "Longitude": "80.01201101923078",
+        "Nearest Landmark": "MDR072"
+      },
+      "session_memory": "- Smoke is coming from electrical room\n- Smoke is coming from electrical room",
+      "related_incidents": []
+    }
+  },
+  {
+    "incident": "There is a small road accident near the main road",
+    "category": "Road Accident",
+    "result": {
+      "classification": "Category: Road Accident\nIncident Type: Vehicle Collision\nSeverity: Medium",
+      "risk": "Risk Level:\nMedium\n\nPossible Impact:\n- Traffic congestion\n- Injury to passengers or pedestrians\n- Damage to vehicles\n- Potential for secondary accidents\n\nReason:\nThe incident is classified as a medium severity road accident with a vehicle collision, indicating a significant but not catastrophic event, and the location near the main road increases the potential for traffic disruption and secondary accidents.",
+      "decision": "Immediate Actions:\n- Clear the area to prevent further accidents\n- Provide first aid to injured persons\n- Call emergency services\n\nSafety Measures:\n- Wear protective gear when approaching the scene\n- Redirect traffic to avoid congestion\n- Ensure fire extinguishers are nearby\n\nWho Should Respond:\n- Police\n- Ambulance\n- Fire Department\n\nEmergency Contacts (India):\n- 100 for police\n- 102 for ambulance\n- 101 for fire\n\nPriority:\n- Medium",
+      "contacts": {
+        "Police": "100",
+        "Ambulance": "108",
+        "National Emergency": "112"
+      },
+      "hospital": {
+        "Hospital": "Government General Hospital",
+        "Latitude": 13.6288,
+        "Longitude": 80.028,
+        "Ambulance": "108"
+      },
+      "weather": null,
+      "location": {
+        "Location": "NH16, Cherrugunta, Tada, Tirupati, Andhra Pradesh, 524401, India",
+        "Latitude": "13.6288",
+        "Longitude": "80.028",
+        "Nearest Landmark": "NH16"
+      },
+      "session_memory": "- Smoke is coming from electrical room",
+      "related_incidents": [
+        {
+          "incident": "Accident happened in the road",
+          "category": "Road Accident",
+          "result": {
+            "classification": "Category: Road Accident\nIncident Type: Vehicle Collision\nSeverity: Medium",
+            "risk": "Risk Level:\nMedium\n\nPossible Impact:\n- Injury to occupants of the vehicles\n- Damage to vehicles\n- Traffic congestion\n- Potential for secondary accidents\n\nReason:\n- The incident is classified as a vehicle collision with medium severity, indicating a significant impact but not catastrophic.\n- The road accident may cause injuries and damage to the vehicles involved, and potentially disrupt traffic flow.",
+            "decision": "Immediate Actions:\n- Clear the area to prevent further accidents\n- Provide first aid to injured individuals\n- Call emergency services\n\nSafety Measures:\n- Wear protective gear when approaching the scene\n- Be cautious of potential fire hazards from damaged vehicles\n- Redirect traffic to prevent congestion\n\nWho Should Respond:\n- Fire Department\n- Police\n- Ambulance\n\nEmergency Contacts (India):\n- 101 for fire services\n- 100 for police\n- 102 for ambulance\n\nPriority:\n- Medium",
+            "contacts": {
+              "Police": "100",
+              "Ambulance": "108",
+              "National Emergency": "112"
+            },
+            "hospital": {
+              "Hospital": "Government General Hospital",
+              "Latitude": 13.70414453846154,
+              "Longitude": 80.01201101923078,
+              "Ambulance": "108"
+            },
+            "weather": null,
+            "location": {
+              "Location": "MDR072, Sullurupeta Urban, Pahaddlagunta, Sullurpeta, Tirupati, Andhra Pradesh, 524121, India",
+              "Latitude": "13.70414453846154",
+              "Longitude": "80.01201101923078",
+              "Nearest Landmark": "MDR072"
+            },
+            "session_memory": "- Smoke is coming from electrical room\n- Smoke is coming from electrical room",
+            "related_incidents": []
+          }
+        }
+      ],
+      "workflow": [
+        {
+          "step": "Incident Received",
+          "status": "Completed"
+        },
+        {
+          "step": "Classification Agent",
+          "status": "Completed"
+        },
+        {
+          "step": "Risk Assessment Agent",
+          "status": "Completed"
+        },
+        {
+          "step": "Memory Retrieval",
+          "status": "Completed"
+        },
+        {
+          "step": "Decision Agent",
+          "status": "Completed"
+        },
+        {
+          "step": "Enterprise Tools",
+          "status": "Completed"
+        },
+        {
+          "step": "Short-Term Memory Update",
+          "status": "Completed"
+        }
+      ],
+      "workflow_status": "Completed"
+    }
   }
 ]
