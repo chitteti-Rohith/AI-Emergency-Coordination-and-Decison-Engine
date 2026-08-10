@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Axios client for communicating with the Flask backend.
 const apiClient = axios.create({
-  baseURL: "http://127.0.0.1:5000",
+  baseURL: "https://ai-emergency-backend-q40q.onrender.com",
   headers: {
     "Content-Type": "application/json",
   },
