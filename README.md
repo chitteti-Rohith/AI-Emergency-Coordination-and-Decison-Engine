@@ -233,8 +233,29 @@ Short-Term Memory                Long-Term Memory
 - ✅ Milestone 1 – Foundation & AI Agent Setup
 - ✅ Milestone 2 – Enterprise Tools Integration
 - ✅ Milestone 3 – Agent Coordination & Memory Systems
+- ✅ Milestone 4 – Final Integration, Deployment & Documentation
 
 ---
+# 🌐 Deployment
+
+The application has been successfully deployed and tested in a production environment.
+
+### Frontend
+- Platform: Vercel
+- URL: https://ai-emergency-frontend.vercel.app/
+
+### Backend
+- Platform: Render
+- URL: https://ai-emergency-backend-q40q.onrender.com
+
+### Deployment Highlights
+
+- ✅ React frontend deployed on Vercel
+- ✅ Flask backend deployed on Render
+- ✅ Frontend connected to the deployed backend API
+- ✅ `/analyze` API tested successfully
+- ✅ Production workflow validated
+- ✅ MIT License added to the repository
 
 # 🔮 Future Enhancements
 
